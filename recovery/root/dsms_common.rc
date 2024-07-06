@@ -1,9 +1,0 @@
-service dsmsd /system/bin/dsms
-	class core
-	user dsms
-	group dsms
-	disabled
-	oneshot
-
-on boot
-	start dsmsd

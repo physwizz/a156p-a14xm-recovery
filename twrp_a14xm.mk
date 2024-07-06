@@ -5,10 +5,17 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
+PRODUCT_RELEASE_NAME := a10s
+
+# Inherit some common TWRP stuff.
+$(call inherit-product, vendor/twrp/config/common.mk)
+
+$(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 
 # Inherit from a14xm device
 $(call inherit-product, device/samsung/a14xm/device.mk)
+
+PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(DEVICE_PATH)/recovery/root,recovery/root)
 
 PRODUCT_DEVICE := a14xm
 PRODUCT_NAME := twrp_a14xm
