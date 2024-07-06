@@ -3,6 +3,9 @@ ro.product.board=a14xm
 ro.board.platform=mt6833
 sys.usb.controller=musb-hdrc
 ro.sys.usb.storage.type=mtp
+
+ro.sf.lcd_density=450
+
 ro.boot.dynamic_partitions=true
 
 ro.postinstall.fstab.prefix=/system
