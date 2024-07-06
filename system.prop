@@ -1,0 +1,7 @@
+ro.display.series=Samsung A14
+ro.product.board=a14xm
+ro.board.platform=mt6833
+sys.usb.controller=musb-hdrc
+ro.boot.dynamic_partitions=true
+
+ro.boot.boot_devices=bootdevice,soc/11230000.mmc,11230000.mmc
