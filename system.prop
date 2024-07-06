@@ -2,6 +2,12 @@ ro.display.series=Samsung A14
 ro.product.board=a14xm
 ro.board.platform=mt6833
 sys.usb.controller=musb-hdrc
+ro.sys.usb.storage.type=mtp
 ro.boot.dynamic_partitions=true
+
+ro.postinstall.fstab.prefix=/system
+
+ro.vendor.mtk_tee_gp_support=1
+ro.vendor.mtk_microtrust_tee_support=1
 
 ro.boot.boot_devices=bootdevice,soc/11230000.mmc,11230000.mmc
