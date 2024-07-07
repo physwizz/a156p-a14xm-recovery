@@ -1,6 +1,7 @@
 ro.display.series=Samsung A14
 ro.product.board=a14xm
 ro.board.platform=mt6833
+
 sys.usb.controller=musb-hdrc
 ro.sys.usb.storage.type=mtp
 
