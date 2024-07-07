@@ -14,4 +14,4 @@ ro.postinstall.fstab.prefix=/system
 ro.vendor.mtk_tee_gp_support=1
 ro.vendor.mtk_microtrust_tee_support=1
 
-ro.boot.boot_devices=bootdevice,soc/11230000.mmc,11230000.mmc
+ro.boot.boot_devices=bootdevice,11230000.mmc,11270000.ufshci
