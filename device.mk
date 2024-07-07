@@ -52,26 +52,17 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 # Dynamic partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
-# Drm
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.4
-
-# Keymaster
-PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.1
-
-# Keymint
-PRODUCT_PACKAGES += \
     android.hardware.security.keymint \
     android.hardware.security.secureclock \
-    android.hardware.security.sharedsecret
-
-# Keystore2
-PRODUCT_PACKAGES += \
-    android.system.keystore2
-
-# fastbootd
-PRODUCT_PACKAGES += \
+    android.hardware.security.sharedsecret \
+    android.system.keystore2 \
+    android.hardware.boot@1.2-mtkimpl \
+    android.hardware.boot@1.2-mtkimpl.recovery \
+    mtk_plpath_utils \
+    mtk_plpath_utils.recovery \
     android.hardware.fastboot@1.0-impl-mock \
     android.hardware.fastboot@1.0-impl-mock.recovery \
     fastbootd
@@ -79,7 +70,3 @@ PRODUCT_PACKAGES += \
 PRODUCT_PRODUCT_PROPERTIES += \
 	ro.fastbootd.available=true
 
-# PlPath_Utils
-PRODUCT_PACKAGES += \
-    mtk_plpath_utils \
-    mtk_plpath_utils.recovery
