@@ -38,7 +38,7 @@ Here's a revised and improved version of your README snippet:
 
 **### Build**
 
-Make sure you have the necessary build environment set up, including Android build tools and the LineageOS source code.
+Make sure you have the necessary build environment set up
 
 1. **Preparation:**
    ```bash
