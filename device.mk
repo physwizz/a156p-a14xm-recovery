@@ -53,8 +53,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.4
-    android.hardware.keymaster@4.1
+    android.hardware.drm@1.4 \
+    android.hardware.keymaster@4.1 \
     android.hardware.security.keymint \
     android.hardware.security.secureclock \
     android.hardware.security.sharedsecret \
