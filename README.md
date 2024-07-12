@@ -34,7 +34,28 @@ The Samsung Galaxy A14 5G is an entry level device released by Samsung in early 
   - USB: USB Type-C 2.0
 - **Sensors**: Fingerprint (side-mounted), accelerometer, gyro, proximity, compass
 
-### Software
+### Build 
+- run chmod +x mkbootimg, otherwise you will run into the following problems:
+[100% 2/2] ----- Making recovery image ------
+FAILED: out/target/product/a14xm/recovery.img
+/bin/bash -c "(device/samsung/a14xm/mkbootimg --ramdisk out/target/product/a14xm
+/ramdisk-recovery.img  --cmdline \"androidboot.init_fatal_reboot_target=recovery
+ buildvariant=eng\" --base 0x40078000 --pagesize 2048 --recovery_dtbo device/sam
+sung/a14xm/prebuilt/dtbo.img --dtb out/target/product/a14xm/dtb.img 
+--kernel out
+/target/product/a14xm/kernel 
+--os_version 12 --os_patch_level 2099-12-31 --kerne
+l_offset 0x00008000 --pagesize 2048 --ramdisk_offset 0x11088000 --second_offset 
+0x07c00000 --tags_offset 0x07c08000 --dtb  --output out/target/product/a14xm/rec
+overy.img ) && (echo \"----- Lying about SEAndroid state to Samsung bootloader -
+-----\" ) && (echo -n \"SEANDROIDENFORCE\" >> out/target/product/a14xm/recovery.
+img ) && (echo \"Made recovery image: out/target/product/a14xm/recovery.img\" ) 
+&& (tar -C out/target/product/a14xm -c recovery.img > out/target/product/a14xm/r
+ecovery.tar ) && (echo \"Made flashable out/target/product/a14xm/recovery.tar: o
+ut/target/product/a14xm/recovery.img\" )"
 
-- **Android Version**: Shipped with Android 13, upgradeable to Android 14. OneUI 6.1
-- **Security Updates**: Expected monthly security patches.
+'bash
+source build/envsetup.sh; export ALLOW_MISSING_DEPENDENCIES=true; lunch twrp_a12-eng;  '
+
+'mka recoveryimage '
+
