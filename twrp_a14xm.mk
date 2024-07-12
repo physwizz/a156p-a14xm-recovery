@@ -5,6 +5,8 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+DEVICE_PATH := device/samsung/a14xm
+
 PRODUCT_RELEASE_NAME := a14xm
 
 # Inherit some common TWRP stuff.
