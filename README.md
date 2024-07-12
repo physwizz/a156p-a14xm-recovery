@@ -34,28 +34,41 @@ The Samsung Galaxy A14 5G is an entry level device released by Samsung in early 
   - USB: USB Type-C 2.0
 - **Sensors**: Fingerprint (side-mounted), accelerometer, gyro, proximity, compass
 
-### Build 
-- run chmod +x mkbootimg, otherwise you will run into the following problems:
+Here's a revised and improved version of your README snippet:
+
+**### Build**
+
+Make sure you have the necessary build environment set up, including Android build tools and the LineageOS source code.
+
+1. **Preparation:**
+   ```bash
+   chmod +x mkbootimg  # Ensure mkbootimg script is executable
+   source build/envsetup.sh  # Source the build environment setup script
+   export ALLOW_MISSING_DEPENDENCIES=true  # Optional, allows building with missing dependencies
+   lunch twrp_a14xm-eng  # Choose the appropriate device/variant for your A14XM phone (replace 'a14xm' if different)
+   ```
+
+2. **Build Recovery Image:**
+   ```bash
+   mka recoveryimage
+   ```
+
+**Troubleshooting:**
+
+If you encounter the following error during the build process:
+
+```
 [100% 2/2] ----- Making recovery image ------
 FAILED: out/target/product/a14xm/recovery.img
-/bin/bash -c "(device/samsung/a14xm/mkbootimg --ramdisk out/target/product/a14xm
-/ramdisk-recovery.img  --cmdline \"androidboot.init_fatal_reboot_target=recovery
- buildvariant=eng\" --base 0x40078000 --pagesize 2048 --recovery_dtbo device/sam
-sung/a14xm/prebuilt/dtbo.img --dtb out/target/product/a14xm/dtb.img 
---kernel out
-/target/product/a14xm/kernel 
---os_version 12 --os_patch_level 2099-12-31 --kerne
-l_offset 0x00008000 --pagesize 2048 --ramdisk_offset 0x11088000 --second_offset 
-0x07c00000 --tags_offset 0x07c08000 --dtb  --output out/target/product/a14xm/rec
-overy.img ) && (echo \"----- Lying about SEAndroid state to Samsung bootloader -
------\" ) && (echo -n \"SEANDROIDENFORCE\" >> out/target/product/a14xm/recovery.
-img ) && (echo \"Made recovery image: out/target/product/a14xm/recovery.img\" ) 
-&& (tar -C out/target/product/a14xm -c recovery.img > out/target/product/a14xm/r
-ecovery.tar ) && (echo \"Made flashable out/target/product/a14xm/recovery.tar: o
-ut/target/product/a14xm/recovery.img\" )"
+...
+```
 
-'bash
-source build/envsetup.sh; export ALLOW_MISSING_DEPENDENCIES=true; lunch twrp_a12-eng;  '
+This usually indicates an issue with permissions or the execution of the `mkbootimg` script. Ensure the following:
 
-'mka recoveryimage '
+* **Permissions:** You've made `mkbootimg` executable using `chmod +x mkbootimg`.
+* **Environment:** You've sourced the build environment setup script (`build/envsetup.sh`).
+* **Device:** You've selected the correct device/variant using `lunch`.
+* **Dependencies:**  All required build dependencies are installed.
+
+
 
